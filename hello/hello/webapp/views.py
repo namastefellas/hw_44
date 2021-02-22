@@ -2,6 +2,12 @@ from django.shortcuts import render
 
 # Create your views here.
 
+list_rounds = {}
+rounds = 1
+
+
+
+
 def game(actual):
     secret_nums = [5, 1, 2, 9]
 
