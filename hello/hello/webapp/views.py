@@ -26,3 +26,6 @@ def results(request):
         actual = list(map(int,request.POST.get('numbers').split(' ')))
         context = {'result': game(actual)}
         return render(request, 'index.html', context)
+
+def history_page(request):
+    return render(request, 'rounds.html')

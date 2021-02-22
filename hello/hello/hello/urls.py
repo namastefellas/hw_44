@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from webapp.views import results
+from webapp.views import results, history_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', results)
+    path('', results),
+    path('history', history_page)
 ]
