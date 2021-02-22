@@ -23,15 +23,18 @@ def game(actual):
             cow += 1
         if bull == 4:
             return 'You win!'
+    list_rounds[rounds] = f'Cows: {cow}; Bulls: {bull}'
     return f'Cows: {cow}; Bulls: {bull}'
 
 def results(request):
+    global rounds
     if request.method == 'GET':
         return render(request, 'index.html')
     elif request.method == 'POST':
+        rounds += 1
         actual = list(map(int,request.POST.get('numbers').split(' ')))
         context = {'result': game(actual)}
         return render(request, 'index.html', context)
 
 def history_page(request):
-    return render(request, 'rounds.html')
+    return render(request, 'rounds.html', {'list_rounds': list_rounds})

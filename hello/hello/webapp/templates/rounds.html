@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>History of players rounds</h1>
-    
+    {% for key, value in list_rounds.items %}
+    <p>{{ key }} {{ value }}</p>
+    {% endfor %}
 </body>
 </html>
